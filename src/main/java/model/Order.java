@@ -10,6 +10,7 @@ public class Order {
     private Map<String, Product> products;
 
     public Order(String id) {
+        this.id = id;
         products = new HashMap<>(); // Muss initialisiert werden,
                                     // weil products sonst null ist
     }
@@ -24,6 +25,7 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
+
         return Objects.equals(id, order.id) && Objects.equals(products, order.products);
     }
 
