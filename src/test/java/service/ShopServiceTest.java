@@ -1,5 +1,6 @@
 package service;
 
+import exception.ProductNotFoundException;
 import model.Order;
 import model.Product;
 import org.junit.jupiter.api.Test;
@@ -11,10 +12,14 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Die Art & Weise dieser Test-Suite ist ziemlich redundant, da der gleiche & wesentliche Code bereits vom Repository abgedeckt ist
+// Dies wird sich in Zukunft umdrehen, da wir Repositories (so gut wie) nicht mehr testen werden, sondern nur noch die Services
+
+// Außerdem: Der Test ist bewusst in einem anderem Stil geschrieben, um zu zeigen, dass es auch anders geht
 class ShopServiceTest {
 
     @Test
-    void getProduct_whenNonExistingId_thenReturnNull() {
+    void getProduct_whenNonExistingId_thenThrowProductNonFoundException() {
         //GIVEN
         List<Order> order = new ArrayList<>();
         OrderRepository orderRepository = new OrderRepository(order);
@@ -23,12 +28,8 @@ class ShopServiceTest {
 
         ShopService shopService = new ShopService(productRepository, orderRepository);
 
-        //WHEN
-        Product actual = shopService.getProductById("nonExistingId");
-
-        //THEN
-        Product expected = null;
-        assertEquals(expected, actual);
+        //WHEN + THEN
+        assertThrows(ProductNotFoundException.class, () -> shopService.getProductById("nonExistingId"));
     }
 
     @Test
@@ -37,7 +38,7 @@ class ShopServiceTest {
         List<Order> order = new ArrayList<>();
         OrderRepository orderRepository = new OrderRepository(order);
 
-        Product product1 = new Product("Banane", "123");
+        Product product1 = new Product("123", "Banane");
         List<Product> products = new ArrayList<>();
         products.add(product1);
 
@@ -49,7 +50,7 @@ class ShopServiceTest {
         Product actual = shopService.getProductById("123");
 
         //THEN
-        Product expected = new Product("Banane", "123");
+        Product expected = new Product("123", "Banane");
         assertEquals(expected, actual);
     }
 
@@ -134,7 +135,7 @@ class ShopServiceTest {
 
         ProductRepository productRepository = new ProductRepository(products);
 
-        List<Order> orders = new ArrayList<>();
+        List<Order> orders = new ArrayList<>(List.of(new Order("Order-1", products), new Order("Order-2")));
         OrderRepository orderRepository = new OrderRepository(orders);
 
         ShopService shopService = new ShopService(productRepository, orderRepository);
