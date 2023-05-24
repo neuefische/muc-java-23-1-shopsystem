@@ -3,21 +3,24 @@ package repository;
 import model.Product;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 // Repository - Klasse die auf gespeicherte Daten zugreift
 // Product Repository kümmert sich um ... Zugriff auf "Product" Daten
 public class ProductRepository {
 
-    private Map<String, Product> products;
+    private List<Product> products;
 
     public ProductRepository() {
-        products = new HashMap<>();
+        products = new ArrayList<>();
+    }
+
+    public ProductRepository(List<Product> products) {
+        this.products = products;
     }
 
     public List<Product> list() {
-        return new ArrayList<Product>(products.values());
+        return products;
     }
 }

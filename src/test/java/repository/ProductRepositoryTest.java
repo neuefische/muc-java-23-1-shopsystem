@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,6 +26,28 @@ class ProductRepositoryTest {
 
         // Then - Soll Zustand
         assertEquals(actualProductList, expectedProductList);
+        assertEquals(expectedListLength, actualProductList.size());
+    }
+
+    @Test
+    void list_whenProductsMapHasOneProduct_thenReturnListWithOneProduct() {
+        // Given - Ist Zustand
+        // Produkt erstellen
+        Product appleKeyboard = new Product("1", "Apple Tastatur");
+
+        // Erwartete ProduktLISTE erstellen
+        List<Product> expectedProductList = new ArrayList<>();
+        expectedProductList.add(appleKeyboard);
+        int expectedListLength = 1;
+
+        // Liste im Repo speicher
+        ProductRepository productRepository = new ProductRepository(expectedProductList);
+
+        // When - Unter welchen Umständen (bekommen wir die Liste?)
+        List<Product> actualProductList = productRepository.list();
+
+        // Then - Soll Zustand
+        assertEquals(expectedProductList, actualProductList);
         assertEquals(expectedListLength, actualProductList.size());
     }
 }
