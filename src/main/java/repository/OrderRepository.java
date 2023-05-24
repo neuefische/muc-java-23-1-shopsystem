@@ -38,4 +38,8 @@ public class OrderRepository {
         // Soll eine Exception geworfen werden
         throw new OrderNotFoundException(idOfRequestedOrder);
     }
+
+    public void addOrder(Order orderToAdd) {
+        orders.add(orderToAdd);
+    }
 }
