@@ -13,7 +13,7 @@ class ProductRepositoryTest {
 
     // Methodenname + when + then
     @Test
-    void list_whenProductsMapIsEmpty_thenReturnEmptyList() {
+    void list_whenProductsListIsEmpty_thenReturnEmptyList() {
         // Given - Ist Zustand
         // Instanz = Ein konkretes Objekt vom Typen
         ProductRepository productRepository = new ProductRepository();
@@ -30,7 +30,7 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void list_whenProductsMapHasOneProduct_thenReturnListWithOneProduct() {
+    void list_whenProductsListHasOneProduct_thenReturnListWithOneProduct() {
         // Given - Ist Zustand
         // Produkt erstellen
         Product appleKeyboard = new Product("1", "Apple Tastatur");
@@ -52,7 +52,7 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void list_whenProductsMapHasTwoProducts_thenReturnListWithTwoProducts() {
+    void list_whenProductsListHasTwoProducts_thenReturnListWithTwoProducts() {
         // Given - Ist Zustand
         // Produkt erstellen
         Product appleKeyboard = new Product("1", "Apple Tastatur");
@@ -97,15 +97,12 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void getProductById_whenProductDoesntExist_thenThrowException() {
+    void getProductById_whenProductDoesntExist_thenThrowProductNotFoundException() {
         // Given - Ist Zustand
         List<Product> expectedProductList = new ArrayList<>();
 
-        // Zur Verdeutlichung: Das erwartete Produkt ist die Apple Maus.
-        // Normalerweose
-        String expectedId = "Diese ID gibt es nicht und die Liste ist eh leer.";
-
         ProductRepository productRepository = new ProductRepository(expectedProductList);
+        String expectedId = "Diese ID gibt es nicht und die Liste ist eh leer.";
 
         // When + Then
         assertThrows(ProductNotFoundException.class, () -> productRepository.getProductById(expectedId));

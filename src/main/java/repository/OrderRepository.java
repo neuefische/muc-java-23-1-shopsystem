@@ -1,16 +1,14 @@
 package repository;
 
 import exception.OrderNotFoundException;
-import exception.ProductNotFoundException;
 import model.Order;
-import model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderRepository {
 
-    private List<Order> orders;
+    private final List<Order> orders;
 
     public OrderRepository() {
         orders = new ArrayList<>();
