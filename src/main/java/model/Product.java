@@ -18,6 +18,15 @@ public class Product {
 
     // 3. Öffentlichen Methoden
 
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+
     // 4. Privaten Methoden
 
     // 5. Methoden die sich immer wiederholen - toString equals (Boilerplate Code)
