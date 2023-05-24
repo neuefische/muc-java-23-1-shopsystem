@@ -25,7 +25,7 @@ public class ProductRepository {
         return products;
     }
 
-    public Product getProduct(String idOfRequestedProduct) {
+    public Product getProductById(String idOfRequestedProduct) {
         // Indices:  0              1                      2
         //          AppleKeyboard   Vorwerk Staubsauger    Les Paul Gitarre
 
