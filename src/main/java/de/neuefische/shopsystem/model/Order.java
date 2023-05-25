@@ -1,12 +1,12 @@
-package model;
+package de.neuefische.shopsystem.model;
 
 import java.util.*;
 
 public class Order {
 
-    private String id;
+    private final String id;
     // Zu List wechseln?
-    private List<Product> products;
+    private final List<Product> products;
 
     public Order(String id) {
         this.id = id;

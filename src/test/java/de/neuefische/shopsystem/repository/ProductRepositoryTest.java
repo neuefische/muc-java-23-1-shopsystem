@@ -1,7 +1,7 @@
-package repository;
+package de.neuefische.shopsystem.repository;
 
-import exception.ProductNotFoundException;
-import model.Product;
+import de.neuefische.shopsystem.exception.ProductNotFoundException;
+import de.neuefische.shopsystem.model.Product;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

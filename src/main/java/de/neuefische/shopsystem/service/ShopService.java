@@ -1,9 +1,9 @@
-package service;
+package de.neuefische.shopsystem.service;
 
-import model.Order;
-import model.Product;
-import repository.OrderRepository;
-import repository.ProductRepository;
+import de.neuefische.shopsystem.repository.OrderRepository;
+import de.neuefische.shopsystem.model.Order;
+import de.neuefische.shopsystem.model.Product;
+import de.neuefische.shopsystem.repository.ProductRepository;
 
 import java.util.List;
 

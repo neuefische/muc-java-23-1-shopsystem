@@ -1,11 +1,11 @@
-package service;
+package de.neuefische.shopsystem.service;
 
-import exception.ProductNotFoundException;
-import model.Order;
-import model.Product;
+import de.neuefische.shopsystem.exception.ProductNotFoundException;
+import de.neuefische.shopsystem.model.Order;
+import de.neuefische.shopsystem.model.Product;
 import org.junit.jupiter.api.Test;
-import repository.OrderRepository;
-import repository.ProductRepository;
+import de.neuefische.shopsystem.repository.OrderRepository;
+import de.neuefische.shopsystem.repository.ProductRepository;
 
 import java.util.ArrayList;
 import java.util.List;

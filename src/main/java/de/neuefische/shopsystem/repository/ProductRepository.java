@@ -1,7 +1,7 @@
-package repository;
+package de.neuefische.shopsystem.repository;
 
-import exception.ProductNotFoundException;
-import model.Product;
+import de.neuefische.shopsystem.exception.ProductNotFoundException;
+import de.neuefische.shopsystem.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 // Product Repository kümmert sich um ... Zugriff auf "Product" Daten
 public class ProductRepository {
 
-    private List<Product> products;
+    private final List<Product> products;
 
     public ProductRepository() {
         products = new ArrayList<>();

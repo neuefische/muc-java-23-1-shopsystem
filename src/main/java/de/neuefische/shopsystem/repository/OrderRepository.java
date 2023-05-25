@@ -1,7 +1,7 @@
-package repository;
+package de.neuefische.shopsystem.repository;
 
-import exception.OrderNotFoundException;
-import model.Order;
+import de.neuefische.shopsystem.exception.OrderNotFoundException;
+import de.neuefische.shopsystem.model.Order;
 
 import java.util.ArrayList;
 import java.util.List;

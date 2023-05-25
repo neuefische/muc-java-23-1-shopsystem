@@ -1,4 +1,4 @@
-package exception;
+package de.neuefische.shopsystem.exception;
 
 import java.util.NoSuchElementException;
 

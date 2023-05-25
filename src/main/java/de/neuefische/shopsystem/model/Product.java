@@ -1,4 +1,4 @@
-package model;
+package de.neuefische.shopsystem.model;
 
 import java.util.Objects;
 
@@ -7,8 +7,8 @@ import java.util.Objects;
 public class Product {
 
     // 1. Attribute = Eigenschaften der Klasse
-    private String id;
-    private String name;
+    private final String id;
+    private final String name;
 
     // 2. Konstruktoren
     public Product(String id, String name) {
