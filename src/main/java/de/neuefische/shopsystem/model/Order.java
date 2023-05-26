@@ -19,6 +19,10 @@ public class Order {
         this.products = products;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
