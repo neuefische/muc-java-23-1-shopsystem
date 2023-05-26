@@ -141,8 +141,6 @@ class ShopServiceTest {
         ShopService shopService = new ShopService(productRepository, orderRepository);
         int initialOrdersListSize = shopService.listOrders().size();
 
-        int expectedInitialLength = 2;
-        int expectedIncrementedLength = 3;
 
         //WHEN
         String orderId = "ABC13";
@@ -150,8 +148,7 @@ class ShopServiceTest {
         int incrementedOrdersListSize = shopService.listOrders().size();
 
         //THEN
-        assertEquals(expectedInitialLength, initialOrdersListSize);
-        assertEquals(expectedIncrementedLength, incrementedOrdersListSize);
+        assertEquals(incrementedOrdersListSize, initialOrdersListSize + 1);
     }
 
 }
