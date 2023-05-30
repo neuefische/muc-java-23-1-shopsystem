@@ -19,13 +19,13 @@ public class ProductRepository {
     public ProductRepository() {
         products = new ArrayList<>();
         // Zur besseren Testbarkeit mit dem Controller, habe ich hier initiale Produkte eingefügt
-        addInitialProducts();
+//        addInitialProducts();
     }
 
     public ProductRepository(List<Product> products) {
         this.products = products;
         // Zur besseren Testbarkeit mit dem Controller, habe ich hier initiale Produkte eingefügt
-        addInitialProducts();
+//        addInitialProducts();
     }
 
     public List<Product> list() {

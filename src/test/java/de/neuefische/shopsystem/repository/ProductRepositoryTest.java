@@ -11,70 +11,67 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductRepositoryTest {
 
-    // Tests sind funktionsfähig, aber auskommentiert, solange Testdatensätze im ProductRepository vorhanden sind
-
     // Methodenname + when + then
-//    @Test
-//    void list_whenProductsListIsEmpty_thenReturnEmptyList() {
-//        // Given - Ist Zustand
-//        // Instanz = Ein konkretes Objekt vom Typen
-//        ProductRepository productRepository = new ProductRepository();
-//        // Wie sieht die eigentlich erwartete Liste aus?
-//        List<Product> expectedProductList = new ArrayList<>();
-//        int expectedListLength = 0;
-//
-//        // When - Unter welchen Umständen (bekommen wir die Liste?)
-//        List<Product> actualProductList = productRepository.list();
-//
-//        // Then - Soll Zustand
-//        assertEquals(actualProductList, expectedProductList);
-//        assertEquals(expectedListLength, actualProductList.size());
-//    }
+    @Test
+    void list_whenProductsListIsEmpty_thenReturnEmptyList() {
+        // Given - Ist Zustand
+        // Instanz = Ein konkretes Objekt vom Typen
+        ProductRepository productRepository = new ProductRepository();
+        // Wie sieht die eigentlich erwartete Liste aus?
+        List<Product> expectedProductList = new ArrayList<>();
+        int expectedListLength = 0;
 
-//    @Test
-//    void list_whenProductsListHasOneProduct_thenReturnListWithOneProduct() {
-//        // Given - Ist Zustand
-//        // Produkt erstellen
-//        Product appleKeyboard = new Product("1", "Apple Tastatur");
-//
-//        // Erwartete ProduktLISTE erstellen
-//        List<Product> expectedProductList = new ArrayList<>();
-//        expectedProductList.add(appleKeyboard);
-//
-//        // Liste im Repo speicher
-//        ProductRepository productRepository = new ProductRepository(expectedProductList);
-//
-//        // When - Unter welchen Umständen (bekommen wir die Liste?)
-//        List<Product> actualProductList = productRepository.list();
-//
-//        // Then - Soll Zustand
-//        assertEquals(expectedProductList, actualProductList);
-//        assertEquals(expectedListLength, actualProductList.size());
-//    }
+        // When - Unter welchen Umständen (bekommen wir die Liste?)
+        List<Product> actualProductList = productRepository.list();
 
-//    @Test
-//    void list_whenProductsListHasTwoProducts_thenReturnListWithTwoProducts() {
-//        // Given - Ist Zustand
-//        // Produkt erstellen
-//        Product appleKeyboard = new Product("1", "Apple Tastatur");
-//        Product appleMouse = new Product("2", "Apple Maus");
-//
-//        // Erwartete ProduktLISTE erstellen
-//        List<Product> expectedProductList = new ArrayList<>();
-//        expectedProductList.add(appleKeyboard);
-//        expectedProductList.add(appleMouse);
-//        int expectedListLength = 2;
-//
-//        // Liste im Repo speicher
-//        ProductRepository productRepository = new ProductRepository(expectedProductList);
-//
-//        // When - Unter welchen Umständen (bekommen wir die Liste?)
-//        List<Product> actualProductList = productRepository.list();
-//
-//        // Then - Soll Zustand
-//        assertEquals(expectedProductList, actualProductList);
-//        assertEquals(expectedListLength, actualProductList.size());
-//    }
+        // Then - Soll Zustand
+        assertEquals(actualProductList, expectedProductList);
+        assertEquals(expectedListLength, actualProductList.size());
+    }
+
+    @Test
+    void list_whenProductsListHasOneProduct_thenReturnListWithOneProduct() {
+        // Given - Ist Zustand
+        // Produkt erstellen
+        Product appleKeyboard = new Product("1", "Apple Tastatur");
+
+        // Erwartete ProduktLISTE erstellen
+        List<Product> expectedProductList = new ArrayList<>();
+        expectedProductList.add(appleKeyboard);
+
+        // Liste im Repo speicher
+        ProductRepository productRepository = new ProductRepository(expectedProductList);
+
+        // When - Unter welchen Umständen (bekommen wir die Liste?)
+        List<Product> actualProductList = productRepository.list();
+
+        // Then - Soll Zustand
+        assertEquals(expectedProductList, actualProductList);
+    }
+
+    @Test
+    void list_whenProductsListHasTwoProducts_thenReturnListWithTwoProducts() {
+        // Given - Ist Zustand
+        // Produkt erstellen
+        Product appleKeyboard = new Product("1", "Apple Tastatur");
+        Product appleMouse = new Product("2", "Apple Maus");
+
+        // Erwartete ProduktLISTE erstellen
+        List<Product> expectedProductList = new ArrayList<>();
+        expectedProductList.add(appleKeyboard);
+        expectedProductList.add(appleMouse);
+        int expectedListLength = 2;
+
+        // Liste im Repo speicher
+        ProductRepository productRepository = new ProductRepository(expectedProductList);
+
+        // When - Unter welchen Umständen (bekommen wir die Liste?)
+        List<Product> actualProductList = productRepository.list();
+
+        // Then - Soll Zustand
+        assertEquals(expectedProductList, actualProductList);
+        assertEquals(expectedListLength, actualProductList.size());
+    }
 
     @Test
     void getProductById_whenProductExistsInList_thenReturnValidProduct() {

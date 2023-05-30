@@ -13,23 +13,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class OrderRepositoryTest {
 
-    // Test ist funktionsfähig, aber auskommentiert, solange Testdatensätze im OrderRepository vorhanden sind
+    @Test
+    void list_whenOrdersRepositoryIsEmpty_thenReturnEmptyList() {
+        // GIVEN
+        OrderRepository orderRepository = new OrderRepository();
+        List<Order> expectedOrders = new ArrayList<>();
 
-//    @Test
-//    void list_whenOrdersRepositoryIsEmpty_thenReturnEmptyList() {
-//        // GIVEN
-//        OrderRepository orderRepository = new OrderRepository();
-//        List<Order> expectedOrders = new ArrayList<>();
-//
-//        int expectedListLength = 0;
-//
-//        // WHEN
-//        List<Order> actualOrders = orderRepository.list();
-//
-//        // THEN
-//        assertEquals(expectedOrders, actualOrders);
-//        assertEquals(expectedListLength, actualOrders.size());
-//    }
+        int expectedListLength = 0;
+
+        // WHEN
+        List<Order> actualOrders = orderRepository.list();
+
+        // THEN
+        assertEquals(expectedOrders, actualOrders);
+        assertEquals(expectedListLength, actualOrders.size());
+    }
 
     @Test
     void list_whenOrdersRepositoryHasTwoItems_thenReturnListWithTwoItems() {
