@@ -17,15 +17,9 @@ import static org.mockito.Mockito.when;
 
 class ShopServiceTest {
 
-    @Test
-    void getProduct_whenNonExistingId_thenThrowProductNonFoundException() {
-        //GIVEN
-
-        //WHEN + THEN
-    }
 
     @Test
-    void getProduct_whenExistingId_thenReturnProduct() {
+    void getProductById_whenExistingId_thenReturnProduct() {
         //GIVEN
 
         //WHEN
@@ -34,7 +28,7 @@ class ShopServiceTest {
     }
 
     @Test
-    void listProducts_thenReturnProductList() {
+    void listProducts_whenAtLeastOneProductExists_thenReturnProductList() {
         //GIVEN
 
         //WHEN
@@ -67,6 +61,22 @@ class ShopServiceTest {
         //WHEN
 
         //THEN
+    }
+
+    // BONUS
+    @Test
+    void getProductById_whenNonExistingId_thenThrowProductNotFoundException() {
+        //GIVEN
+
+        //WHEN + THEN
+    }
+
+    // BONUS
+    @Test
+    void getOrderById_whenNonExistingId_thenThrowOrderNotFoundException() {
+        //GIVEN
+
+        //WHEN + THEN
     }
 
 }
