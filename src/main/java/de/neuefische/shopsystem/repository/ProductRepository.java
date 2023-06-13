@@ -5,6 +5,7 @@ import de.neuefische.shopsystem.model.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -48,6 +49,14 @@ public class ProductRepository {
         // Wenn for-Schleife durchgelaufen ist, aber nichts gefunden hat ...
         // Soll eine Exception geworfen werden
         throw new ProductNotFoundException(idOfRequestedProduct);
+    }
+
+    public void addProduct(Product product) {
+        this.products.add(product);
+    }
+
+    public void addAll(Collection<Product> products) {
+        this.products.addAll(products);
     }
 
     private void addInitialProducts() {
